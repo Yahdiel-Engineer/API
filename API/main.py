@@ -1,12 +1,9 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-# import models
-# import router
-# from router import router
-# from config import engine
-# from auth import auth
-# from passlib.context import CryptContext
-
+import models
+import router
+from router import router
+from auth import auth
 
 
 
@@ -39,45 +36,6 @@ app = FastAPI(title="SirecomApp",
               )
 
 
-# models.Base.metadata.create_all(bind=engine)
-# pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-# @app.get("/", response_class=HTMLResponse)
-# async def root():
-#     return """
-#     <!DOCTYPE html>
-#     <html>
-#     <head>
-#         <title>Bienvenue sur l'App SIRECOM</title>
-#         <style>
-#             body {
-#                 font-family: Arial, sans-serif;
-#                 text-align: center;
-#                 margin-top: 50px;
-#             }
-#             .button {
-#                 display: inline-block;
-#                 padding: 10px 20px;
-#                 font-size: 16px;
-#                 color: white;
-#                 background-color: #007BFF;
-#                 border: none;
-#                 border-radius: 5px;
-#                 text-decoration: none;
-#                 cursor: pointer;
-#             }
-#             .button:hover {
-#                 background-color: #0056b3;
-#             }
-#         </style>
-#     </head>
-#     <body>
-#         <h1>Bienvenue sur SIRECOM</h1>
-#         <p>Pour accéder à la documentation de l'API, cliquez sur le bouton ci-dessous :</p>
-#         <a href="/docs" class="button">Accéder à la Documentation</a>
-#     </body>
-#     </html>
-#     """
 
 @app.get("/", response_class=HTMLResponse)
 async def root():
@@ -148,8 +106,8 @@ async def root():
 
 
 
-# app.include_router(auth, prefix='/auth',tags=['Authentification'])
-# app.include_router(router, prefix="/router", tags=["SIRECOM"])
+app.include_router(auth, prefix='/auth',tags=['Authentification'])
+app.include_router(router, prefix="/router", tags=["SIRECOM"])
 
 
 
