@@ -1,7 +1,5 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-import models
-import router
 # from router import router
 # from auth import auth
 
