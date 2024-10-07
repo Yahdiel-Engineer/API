@@ -7,7 +7,7 @@ import jwt
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from API.config import ALGORITHM, SECRET_KEY, SessionLocal
-from API.crud import crud, get_user
+from API.crud import get_user
 from API.models import User
 from API.schemas import TokenData, UserInDB
 import sys
