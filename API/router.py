@@ -28,7 +28,7 @@ def get_db():
 
 
 @router.get("/obtenir les produits par:/{barcode}", response_model=schemas.ProductTemplate)
-def lire_le_produit(
+async def lire_le_produit(
     code_barre: str, 
     db: Session = Depends(get_db),
     current_user: schemas.UserInDB = Depends(get_current_user)
@@ -74,7 +74,7 @@ def lire_le_produit(
 
 
 @router.get("/liste des produits/", response_model=List[schemas.ProductTemplate])
-def voir_tous_les_produits(
+async def voir_tous_les_produits(
     db: Session = Depends(get_db),
     current_user: schemas.UserInDB = Depends(get_current_user)
     ):
@@ -92,7 +92,7 @@ def voir_tous_les_produits(
 
 
 @router.patch("/modifier un produit par:/{barcode}/catégorie/")
-def nouvelle_categorie(
+async def nouvelle_categorie(
     code_barre: str, 
     nouvelle_id: int = Query(description="ID de la nouvelle catégorie. Choisissez parmi :\n1. All\n2. Saleable\n3. Expeses"),
     db: Session = Depends(get_db),
@@ -124,7 +124,7 @@ def nouvelle_categorie(
 
 
 @router.patch("/modifier un produit par:/{barcode}/prix/")
-def nouveau_prix(
+async def nouveau_prix(
     code_barre: str, 
     nouveau_prix: float, 
     db: Session = Depends(get_db),
@@ -140,7 +140,7 @@ def nouveau_prix(
 
 
 @router.patch("/modifier_cout_vente/{product_id}/", response_model=schemas.IrProperty)
-def modifier_cout_vente(
+async def modifier_cout_vente(
     product_id: int,
     nouveau_cout: float,
     db: Session = Depends(get_db),
