@@ -1,8 +1,15 @@
 from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-import models, schemas
+from API.models import models
+from API.models import schemas
 from dependencies import get_password_hash
+import sys
+import os
+
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 

@@ -6,10 +6,16 @@ from passlib.context import CryptContext
 import jwt
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
-from config import ALGORITHM, SECRET_KEY, SessionLocal
-import crud
-import models
-import schemas
+from API.config import ALGORITHM, SECRET_KEY, SessionLocal
+from API.crud import crud
+from API.models import models
+from API.schemas import schemas
+import sys
+import os
+
+
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 
 

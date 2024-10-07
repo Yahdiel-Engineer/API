@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, Form, HTTPException, status
 from sqlalchemy.orm import Session
 from API.config import ACCESS_TOKEN_EXPIRE_MINUTES
 from API.crud import crud
-import schemas
+from API.schemas import schemas
 from dependencies import create_access_token, get_current_user, get_db, authenticate_user
 import sys
 import os
