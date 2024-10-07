@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 import crud
 from API.dependencies import get_current_user, get_db
 import schemas
-from API.config import SessionLocal
+from config import SessionLocal
 
 
 
