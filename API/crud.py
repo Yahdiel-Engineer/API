@@ -2,8 +2,7 @@ from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 from API.models import Ir_Property, Product_Category, Product_Product, Product_Template, Stock_Quant, User
-from API.schemas import ProductTemplate, UserCreate
-from API.dependencies import get_password_hash
+from API.schemas import ProductTemplate
 import sys
 import os
 
