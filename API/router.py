@@ -6,13 +6,9 @@ import crud
 from dependencies import get_current_user, get_db
 import schemas
 from config import SessionLocal
-import sys
-import os
 
 
 
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 router = APIRouter()
 
