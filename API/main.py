@@ -33,6 +33,9 @@ app = FastAPI(title="SirecomApp",
     ),
               )
 
+app.include_router(auth, prefix='/auth',tags=['Authentification'])
+app.include_router(router, prefix="/router", tags=["SIRECOM"])
+
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -108,8 +111,7 @@ async def root():
 
 
 
-app.include_router(auth, prefix='/auth',tags=['Authentification'])
-app.include_router(router, prefix="/router", tags=["SIRECOM"])
+
 
 
 
