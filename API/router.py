@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from API.crud import get_product_by_barcode, get_product_category_by_id, get_product_template_by_id, get_stock_quant_by_product_id, mettre_a_jour_prix, tous_les_produits
 from API.dependencies import get_current_user, get_db
 from API.schemas import IrProperty, ProductTemplate, UserInDB
-from config import SessionLocal
+from API.config import SessionLocal
 import sys
 import os
 
