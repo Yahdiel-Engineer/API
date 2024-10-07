@@ -1,9 +1,11 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from .router import router
-from .auth import auth
+import sys
+import os
+from API.router import router
+from API.auth import auth
 
-
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 description = """
 Cette API de SIRECOM permet d'accéder, de gérer et de modifier les données essentielles stockées dans la base de données de l'entreprise. Elle offre une interface sécurisée pour interagir avec plusieurs tables, facilitant ainsi les opérations internes et l'optimisation des processus.
