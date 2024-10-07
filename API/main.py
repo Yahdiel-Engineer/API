@@ -106,8 +106,8 @@ async def root():
 
 
 
-app.include_router(auth, prefix='/auth',tags=['Authentification'])
-# app.include_router(router, prefix="/router", tags=["SIRECOM"])
+# app.include_router(auth, prefix='/auth',tags=['Authentification'])
+app.include_router(router, prefix="/router", tags=["SIRECOM"])
 
 
 
