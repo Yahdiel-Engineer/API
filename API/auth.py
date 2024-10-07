@@ -2,10 +2,10 @@ from datetime import timedelta
 from typing import Optional
 from fastapi import APIRouter, Depends, Form, HTTPException, status
 from sqlalchemy.orm import Session
-from config import ACCESS_TOKEN_EXPIRE_MINUTES
+from API.config import ACCESS_TOKEN_EXPIRE_MINUTES
 import crud
 import schemas
-from dependencies import create_access_token, get_current_user, get_db, authenticate_user
+from API.dependencies import create_access_token, get_current_user, get_db, authenticate_user
 
 
 

@@ -3,9 +3,9 @@ from fastapi import APIRouter, Query
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
 import crud
-from dependencies import get_current_user, get_db
+from API.dependencies import get_current_user, get_db
 import schemas
-from config import SessionLocal
+from API.config import SessionLocal
 
 
 

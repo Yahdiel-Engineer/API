@@ -6,7 +6,7 @@ from passlib.context import CryptContext
 import jwt
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
-from config import ALGORITHM, SECRET_KEY, SessionLocal
+from API.config import ALGORITHM, SECRET_KEY, SessionLocal
 import crud
 import models
 import schemas
