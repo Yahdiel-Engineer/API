@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 import sys
 import os
-# from API.router import router
-# from API.auth import auth
+from API.router import router
+from API.auth import auth
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -35,8 +35,8 @@ app = FastAPI(title="SirecomApp",
     ),
               )
 
-# app.include_router(auth, prefix='/auth',tags=['Authentification'])
-# app.include_router(router, prefix="/router", tags=["SIRECOM"])
+app.include_router(auth, prefix='/auth',tags=['Authentification'])
+app.include_router(router, prefix="/router", tags=["SIRECOM"])
 
 
 
