@@ -7,9 +7,9 @@ import jwt
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from API.config import ALGORITHM, SECRET_KEY, SessionLocal
-from API.crud import crud
-from API.models import models
-from API.schemas import schemas
+from API.crud import crud, get_user
+from API.models import User
+from API.schemas import TokenData, UserInDB
 import sys
 import os
 
@@ -33,7 +33,7 @@ def get_db():
 
 
 
-def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> schemas.UserInDB:
+def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> UserInDB:
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Could not validate credentials",
@@ -60,7 +60,7 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
         if username is None:
             raise credentials_exception
         
-        token_data = schemas.TokenData(username=username)
+        token_data = TokenData(username=username)
 
 
     except ExpiredSignatureError:
@@ -74,7 +74,7 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
     except JWTError:
             raise credentials_exception
     
-    user = crud.get_user(db, username=token_data.username)
+    user = get_user(db, username=token_data.username)
     if user is None:
         raise credentials_exception
     
@@ -97,8 +97,8 @@ def create_access_token(data: dict, expires_delta: timedelta = None) -> str:
 
 
 
-def authenticate_user(db: Session, username: str, password: str) -> models.User:
-    user = db.query(models.User).filter(models.User.username == username).first()
+def authenticate_user(db: Session, username: str, password: str) -> User:
+    user = db.query(User).filter(User.username == username).first()
     if not user:
         return False
     if not verify_password(password, user.hashed_password):
