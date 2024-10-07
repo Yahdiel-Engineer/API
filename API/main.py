@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-from .router import router
-from .auth import auth
+from API.router import router
+from API.auth import auth
 
 
 
