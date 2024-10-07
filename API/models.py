@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Date, Integer, String, ForeignKey, Float
 from sqlalchemy.orm import relationship
-from config import Base
+from config import Base, engine
 
 
 
@@ -13,7 +13,7 @@ class Product_Product(Base):
     __tablename__ = "product_product"
 
     id = Column(Integer, primary_key=True, index=True)
-    product_tmpl_id = Column(Integer, ForeignKey('product_template.id'), primary_key=True, index=True)
+    product_tmpl_id = Column(Integer, ForeignKey('product_template.id'), index=True)
     barcode = Column(String, unique=True, index=True)
 
 class Product_Template(Base):
@@ -40,7 +40,7 @@ class Stock_Quant(Base):
 class Ir_Property(Base):
     __tablename__ = "ir_property"
     id = Column(Integer, primary_key=True, index=True)
-    res_id = Column(String, ForeignKey('product_product.id'))
+    res_id = Column(Integer, ForeignKey('product_product.id'))
     value_float = Column(Float)
 
 
