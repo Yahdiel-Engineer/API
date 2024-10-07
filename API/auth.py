@@ -6,7 +6,7 @@ from API.config import ACCESS_TOKEN_EXPIRE_MINUTES
 from API.crud import create_user
 from API.models import User
 from API.schemas import Token, UserCreate, UserInDB  
-from dependencies import create_access_token, get_current_user, get_db, authenticate_user
+from API.dependencies import create_access_token, get_current_user, get_db, authenticate_user
 import sys
 import os
 
