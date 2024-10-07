@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
-# from router import router
+from router import router
 # from auth import auth
 
 
@@ -105,7 +105,7 @@ async def root():
 
 
 # app.include_router(auth, prefix='/auth',tags=['Authentification'])
-# app.include_router(router, prefix="/router", tags=["SIRECOM"])
+app.include_router(router, prefix="/router", tags=["SIRECOM"])
 
 
 
