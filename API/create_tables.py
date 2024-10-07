@@ -1,5 +1,3 @@
-# create_tables.py
-
 from API.config import create_tables
 import sys
 import os
