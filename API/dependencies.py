@@ -2,8 +2,8 @@ from datetime import datetime, timedelta, timezone
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError
-from passlib.context import CryptContext
 import jwt
+from passlib.context import CryptContext
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from API.config import ALGORITHM, SECRET_KEY, SessionLocal
