@@ -7,9 +7,8 @@ import jwt
 from jwt import ExpiredSignatureError
 from sqlalchemy.orm import Session
 from API.config import ALGORITHM, SECRET_KEY, SessionLocal
-from API.crud import get_user
 from API.models import User
-from API.schemas import TokenData, UserInDB
+from API.schemas import TokenData, UserCreate, UserInDB
 import sys
 import os
 
@@ -30,6 +29,30 @@ def get_db():
     finally:
         db.close()
 
+
+
+
+
+# ============================ Authentification ================================
+
+
+
+def get_user(db: Session, username: str):
+    return db.query(User).filter(User.username == username).first()
+
+
+
+def create_user(db: Session, user: UserCreate):
+    db_user = User(
+        username=user.username,
+        email=user.email,
+        hashed_password=get_password_hash(user.password),
+        full_name=user.full_name
+    )
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
 
 
@@ -112,3 +135,6 @@ def get_password_hash(password: str) -> str:
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
+
+
+

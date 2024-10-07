@@ -145,29 +145,3 @@ def mettre_a_jour_prix(db: Session, product_id: int, nouveau_prix: float):
 
     return property_entry
 
-
-
-
-
-
-
-# ============================ Authentification ================================
-
-
-
-def get_user(db: Session, username: str):
-    return db.query(User).filter(User.username == username).first()
-
-
-
-def create_user(db: Session, user: UserCreate):
-    db_user = User(
-        username=user.username,
-        email=user.email,
-        hashed_password=get_password_hash(user.password),
-        full_name=user.full_name
-    )
-    db.add(db_user)
-    db.commit()
-    db.refresh(db_user)
-    return db_user
