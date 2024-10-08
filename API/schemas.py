@@ -30,7 +30,7 @@ class TokenData(BaseModel):
 class User(BaseModel):
     username: str
     email: str
-    full_name: str
+    full_name: str = None
 
 
 
