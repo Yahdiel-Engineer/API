@@ -29,9 +29,8 @@ class TokenData(BaseModel):
 
 class User(BaseModel):
     username: str
-    email: Optional[str] = None
-    full_name: Optional[str] = None
-    disabled: Optional[bool] = None
+    email: str
+    full_name: str
 
 
 
@@ -39,8 +38,7 @@ class User(BaseModel):
 class UserBase(BaseModel):
     username: str
     email: str
-    full_name: str = None
-    disabled: bool = False
+    full_name: str
 
 
 
@@ -55,7 +53,6 @@ class UserCreate(BaseModel):
     email: str
     full_name: str
     password: str
-    disabled: bool = False
 
 
 
