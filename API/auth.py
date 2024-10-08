@@ -103,7 +103,11 @@ def authentification_pour_un_jeton_d_accès(
 
 @auth.get("/utilisateur/utilisateur actuel/", response_model=User)
 def voir_utilisateur_actuel(current_user: UserInDB = Depends(get_current_user)):
-    return current_user
+    return User(
+        username=current_user.username,
+        email=current_user.email,
+        full_name=current_user.full_name
+    )
 
 
  

@@ -33,7 +33,7 @@ class User(BaseModel):
     full_name: Optional[str] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 
@@ -43,7 +43,7 @@ class UserBase(BaseModel):
     full_name: Optional[str] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 
@@ -63,5 +63,5 @@ class UserCreate(BaseModel):
 
 
 class Config:
-    orm_mode = True
+    from_attributes = True
 
