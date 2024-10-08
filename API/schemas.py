@@ -1,6 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
-from pydantic.generics import GenericModel
+from pydantic.generics import BaseModel
 
 
 
@@ -26,6 +26,7 @@ class Token(BaseModel):
 
 class TokenData(BaseModel):
     username: str = None
+
 
 class User(BaseModel):
     username: str
