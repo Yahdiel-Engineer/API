@@ -30,15 +30,20 @@ class TokenData(BaseModel):
 class User(BaseModel):
     username: str
     email: str
-    full_name: str = None
+    full_name: Optional[str] = None
 
+    class Config:
+        orm_mode = True
 
 
 
 class UserBase(BaseModel):
     username: str
     email: str
-    full_name: str
+    full_name: Optional[str] = None
+
+    class Config:
+        orm_mode = True
 
 
 
