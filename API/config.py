@@ -8,10 +8,6 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush = False, bind=engine)
 Base = declarative_base()
 
-def create_tables():
-    from models import Product_Product, Product_Template, Product_Category, Stock_Quant, Ir_Property, User
-    Base.metadata.create_all(bind=engine)
-
 try:
     conn = engine.connect()
     print("Connecté avec succes")
