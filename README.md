@@ -100,7 +100,7 @@ Sirecom API requires a PostgreSQL database to store data. **Do not use the datab
 1. **Install PostgreSQL** locally or create a cloud instance (Supabase, Render, Railway, etc.)  
 2. **Create a new database** for Sirecom API:
 ```sql
-CREATE DATABASE da_name;
+CREATE DATABASE db_name;
 ```
 3. Update your DATABASE_URL in config.py:
 ```DATABASE_URL = "postgresql://sirecom_user:your_secure_password@localhost:5432/sirecom_db"```
