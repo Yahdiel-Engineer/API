@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Date, Integer, String, ForeignKey, Float
 from sqlalchemy.orm import relationship
-from API.config import Base
+from config import Base
 import sys
 import os
 

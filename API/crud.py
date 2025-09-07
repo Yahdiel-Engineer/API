@@ -1,8 +1,8 @@
 from typing import List
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
-from API.models import Ir_Property, Product_Category, Product_Product, Product_Template, Stock_Quant
-from API.schemas import ProductTemplate
+from models import Ir_Property, Product_Category, Product_Product, Product_Template, Stock_Quant
+from schemas import ProductTemplate
 import sys
 import os
 

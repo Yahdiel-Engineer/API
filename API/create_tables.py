@@ -1,4 +1,4 @@
-from API.config import create_tables
+from config import create_tables
 import sys
 import os
 

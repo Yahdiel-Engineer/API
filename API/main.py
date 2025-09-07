@@ -2,8 +2,8 @@ from fastapi import FastAPI
 from fastapi.responses import HTMLResponse
 import sys
 import os
-from API.router import router
-from API.auth import auth
+from router import router
+from auth import auth
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
