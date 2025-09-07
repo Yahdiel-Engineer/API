@@ -47,4 +47,46 @@
 Install the required dependencies with pip:
 
 ```bash
+pip install --upgrade pip
 pip install -r requirements.txt
+```
+
+or
+
+```text
+fastapi>=0.115.0
+uvicorn>=0.31.0
+SQLAlchemy>=2.0.35
+pydantic>=2.9.2
+python-jose>=3.3.0
+passlib>=1.7.4
+python-multipart>=0.0.12
+psycopg2-binary>=2.9.9
+bcrypt>=4.2.0
+anyio>=4.6.0
+typing-extensions>=4.12.2
+```
+
+---
+
+## 🚀 How to Run & Deploy
+1️⃣ Run the API Locally (Development)
+
+1. Clone the repository:
+
+git clone https://github.com/Yahdiel-Engineer/Sirecom-API.git
+cd Sirecom-API
+
+2. Create and activate a virtual environment:
+
+python -m venv venv
+.\venv\Scripts\activate
+
+3. Install dependencies:
+
+pip install -r requirements.txt
+
+4. Run the API:
+
+uvicorn main:app --reload
+- Access Swagger UI at http://127.0.0.1:8000/docs
