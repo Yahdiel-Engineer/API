@@ -1,4 +1,4 @@
-# 🛠️ Sirecom API
+# 🛠️ Project API
 
 **Sirecom API** is a bridge between **ODOO** and the database, designed to automate updates from point-of-sale systems. For example, when a purchase is made, the stock in the database is automatically updated and synchronized across all points of sale.
 
