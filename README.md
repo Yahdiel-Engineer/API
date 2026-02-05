@@ -93,7 +93,7 @@ uvicorn main:app --reload
 
   ## ⚠️ Important: Database Setup
 
-Sirecom API requires a PostgreSQL database to store data. **Do not use the database URL provided in this repository**, as it points to a personal Supabase instance.  
+Sirecom API requires a PostgreSQL database to store data. **Do not forget to link your database URL in the config**.  
 
 ### Steps to create your own database:
 
