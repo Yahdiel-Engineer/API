@@ -1,6 +1,6 @@
 # 🛠️ Project API
 
-**Sirecom API** is a bridge between **ODOO** and the database, designed to automate updates from point-of-sale systems. For example, when a purchase is made, the stock in the database is automatically updated and synchronized across all points of sale.
+This **API** is a bridge between **ODOO** and the database, designed to automate updates from point-of-sale systems. For example, when a purchase is made, the stock in the database is automatically updated and synchronized across all points of sale.
 
 [![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-Learning-blue?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
